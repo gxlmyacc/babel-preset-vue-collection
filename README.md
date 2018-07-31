@@ -13,6 +13,12 @@
 ## Install
 
 ```bash
+npm install babel-preset-vue-collection --save-dev
+```
+
+or:
+
+```bash
 yarn add babel-preset-vue-collection --dev
 ```
 
