@@ -8,6 +8,7 @@
 - Object rest spread and dynamic import
 - Transform Vue JSX
 - Transform `generator` and `async/await`
+- Transform Class properties
 
 ## Install
 

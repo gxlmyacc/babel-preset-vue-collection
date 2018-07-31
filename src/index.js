@@ -23,7 +23,9 @@ export default function (context, options = {}) {
       useBuiltIns
     }],
     // For dynamic import that you will use a lot in code-split
-    require.resolve('babel-plugin-syntax-dynamic-import')
+    require.resolve('babel-plugin-syntax-dynamic-import'),
+    // class properties transforme
+    require.resolve('babel-plugin-transform-class-properties'),
   ];
 
   return {
