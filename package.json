@@ -6,7 +6,7 @@
     "url": "gxlmyacc/babel-preset-vue-collection",
     "type": "git"
   },
-  "main": "dist/index.common.js",
+  "main": "main/index.js",
   "files": [
     "dist"
   ],
