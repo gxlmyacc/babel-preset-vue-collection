@@ -7,9 +7,6 @@
     "type": "git"
   },
   "main": "main/index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "test": "jest && npm run lint && npm run build",
     "lint": "xo",
