@@ -35,7 +35,7 @@ yarn add babel-preset-vue-collection --dev
 
 ### useBuiltIns
 
-Type: `boolean`<br>
+Type: `boolean`
 Default: `false`
 
 Disable runtime transform. i.e. do not add helpers and polyfill for unsupported features of target environment, eg: `Object.assign`, `Promise`
@@ -44,7 +44,7 @@ As we're using `babel-plugin-transform-runtime` to polyfill your code without po
 
 ### targets
 
-Type: `object`<br>
+Type: `object`
 Default: `{ node: 'current' }` when `env` is `test` or `{ ie: 9, uglify: true }` otherwise.
 
 Takes an object of environment versions to support.
@@ -58,7 +58,6 @@ As we're using `babel-preset-env` to determine the Babel plugins and polyfills y
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-
 
 ## License
 
