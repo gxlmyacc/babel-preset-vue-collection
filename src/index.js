@@ -1,16 +1,16 @@
-import path from 'path';
-
-export default function (context, options = {}) {
+module.exports = function (context, options) {
+  let path = require('path');
   // const env = process.env.BABEL_ENV || process.env.NODE_ENV
-  const useBuiltIns = options.useBuiltIns;
+  options = options || {};
+  let useBuiltIns = options.useBuiltIns;
 
-  const presets = [
+  let presets = [
     [require('babel-preset-env').default, options],
     // vue jsx
     require.resolve('babel-preset-vue')
   ];
 
-  const plugins = [
+  let plugins = [
     // Polyfills the runtime needed for async/await and generators
     [require.resolve('babel-plugin-transform-runtime'), {
       helpers: !useBuiltIns,
@@ -20,7 +20,7 @@ export default function (context, options = {}) {
       moduleName: path.dirname(require.resolve('babel-runtime/package'))
     }],
     [require('babel-plugin-transform-object-rest-spread'), {
-      useBuiltIns
+      useBuiltIns: useBuiltIns
     }],
     // For dynamic import that you will use a lot in code-split
     require.resolve('babel-plugin-syntax-dynamic-import'),
@@ -29,7 +29,7 @@ export default function (context, options = {}) {
   ];
 
   return {
-    presets,
-    plugins
+    presets: presets,
+    plugins: plugins,
   };
-}
+};
