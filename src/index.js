@@ -3,6 +3,9 @@ module.exports = function (context, options) {
   // const env = process.env.BABEL_ENV || process.env.NODE_ENV
   options = options || {};
   let useBuiltIns = options.useBuiltIns;
+  let targets = options.targets;
+  let polyfill = options.polyfill;
+  delete options.polyfill;
 
   let presets = [
     [require('babel-preset-env').default, options],
@@ -11,11 +14,12 @@ module.exports = function (context, options) {
   ];
 
   let plugins = [
+    polyfill ? [require.resolve('babel-plugin-polyfill-env'), options] : null,
     // Polyfills the runtime needed for async/await and generators
     [require.resolve('babel-plugin-transform-runtime'), {
-      helpers: !useBuiltIns,
-      polyfill: !useBuiltIns,
-      regenerator: true,
+      helpers: !useBuiltIns && !polyfill,
+      polyfill: !useBuiltIns && !polyfill,
+      regenerator: !polyfill,
       // Resolve the Babel runtime relative to the config.
       moduleName: path.dirname(require.resolve('babel-runtime/package'))
     }],
@@ -26,7 +30,7 @@ module.exports = function (context, options) {
     require.resolve('babel-plugin-syntax-dynamic-import'),
     // class properties transforme
     require.resolve('babel-plugin-transform-class-properties'),
-  ];
+  ].filter(Boolean);
 
   return {
     presets: presets,

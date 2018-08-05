@@ -42,6 +42,13 @@ Disable runtime transform. i.e. do not add helpers and polyfill for unsupported 
 
 As we're using `babel-plugin-transform-runtime` to polyfill your code without polluting globals, something like `"foobar".includes("foo")` will not work since that would require modification of existing builtins. See [babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime).
 
+### polyfill
+
+Type: `boolean`
+Default: `false`
+
+auto include [babel-polyfill](https://www.npmjs.com/package/babel-polyfill) for entry file. i.e. do not add helpers and polyfill for unsupported features of target environment, eg: `Object.assign`, `Promise`.
+
 ### targets
 
 Type: `object`
