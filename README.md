@@ -6,6 +6,7 @@
 
 - Latest ECMAScript features (babel-preset-env)
 - Object rest spread and dynamic import
+- Auto include babel-polyfill (babel-plugin-polyfill-env)
 - Transform Vue JSX
 - Transform `generator` and `async/await`
 - Transform Class properties
