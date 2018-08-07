@@ -19,7 +19,7 @@ module.exports = function (context, options) {
     [require.resolve('babel-plugin-transform-runtime'), {
       helpers: !useBuiltIns && !polyfill,
       polyfill: !useBuiltIns && !polyfill,
-      regenerator: !polyfill,
+      regenerator: true,
       // Resolve the Babel runtime relative to the config.
       moduleName: path.dirname(require.resolve('babel-runtime/package'))
     }],

@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-vue-collection",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "babel presets collection for Vue.",
   "repository": {
     "url": "gxlmyacc/babel-preset-vue-collection",
